@@ -1,0 +1,6 @@
+ip 192.168.10.247
+gw 192.168.10.1
+netmask 255.255.255.0
+hostname HYWS-SGT0204S
+port 5 name SFP1
+port 6 name SFP2
