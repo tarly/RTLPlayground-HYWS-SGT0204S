@@ -1,0 +1,20 @@
+ip 192.168.14.251
+gw 192.168.14.254
+netmask 255.255.255.0
+hostname HYWS-SGT0204S
+port 5 name SFP1
+port 6 name SFP2
+vlan 1 5t 6t
+vlan 10 5t 6t
+vlan 20 5t 6t
+vlan 30 1 2 3 4 5t 6t
+vlan 40 5t 6t
+vlan 50 5t 6t
+vlan 4000 5t 6t
+pvid 1 30
+pvid 2 30
+pvid 3 30
+pvid 4 30
+vlan 4000 mgmt
+stp mode off
+lldp on

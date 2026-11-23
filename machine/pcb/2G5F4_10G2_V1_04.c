@@ -1,4 +1,14 @@
+#define MACHINE_CHIPSET RTL8372
 #include "machine_defs.h"
+
+/*
+ * HYWS-SGT0204S on 2G5F4_10G2_V1.04 (RTL8372, 4 x 2.5G + 2 x SFP+).
+ * flash_sio = 1: this board's flash is not usable in DIO mode.
+ *
+ * Known open issue: three LEDs on the front panel do not behave as the
+ * stock firmware does; lamp layout was measured (see .led_mux) but not
+ * fully resolved.
+ */
 
 __code const struct machine machine = {
 	MACHINE_COMMON_SETTING,
@@ -57,3 +67,7 @@ __code const struct machine machine = {
 		0x1c, 0x1d, 0x20, 0x3f					/* pads 24-27 */
 	},
 };
+
+MACHINE_CUSTOM_INIT(
+	reg_bit_set(RTL837X_REG_LED_GLB_IO_EN, 6);
+)
