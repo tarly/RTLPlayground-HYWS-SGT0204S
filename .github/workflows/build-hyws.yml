@@ -19,7 +19,7 @@ jobs:
     container:
       image: debian:trixie
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install build dependencies
         run: |
           apt-get update
@@ -36,7 +36,7 @@ jobs:
           test -f dist/HYWS-SGT0204S-V0.2.10.bin
           test "$(stat -c%s dist/HYWS-SGT0204S-V0.2.10.bin)" -eq 524288
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: HYWS-SGT0204S-V0.2.10
           path: dist/HYWS-SGT0204S-V0.2.10.bin
